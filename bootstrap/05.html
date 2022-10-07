@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<!-- 垂直水平居中 -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    .kv {
+      width: 100%;
+      height: 98vh;
+      background-image: url("https://picsum.photos/1400/900/?random=10");
+      background-size: cover;
+
+    }
+
+    .kv .text {
+      text-align: center;
+    }
+
+    /* .kv .container {
+      height: 100%;
+    }
+
+    .kv .container>.row {
+      height: 100%;
+    } */
+
+    /* 一定要在container row設高度 不然出不來垂直對齊 可以用h-100代替*/
+  </style>
+</head>
+
+<body>
+
+
+
+
+  <div class="kv">
+    <!-- kv=key view 主畫面-->
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-8 col-md-6">
+          <div class="text">
+            <h1>AAAAAAAA</h1>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed error corporis soluta et perspiciatis saepe!
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

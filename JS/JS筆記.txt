@@ -1,0 +1,27 @@
+innerHTML 顯示
+var可逗點連接 可跨行 
+var x = "字元" + 數字 + 數字 => 會全部當字元處理
+var x = 3+5+"8" => 88 數字在前會當作數字處理
+
+var x=10;y=20; z = x+y =>30
+var x=10;y=20; z = "answer:" +x+y =>30 ( 注意空格 )
+
+
+
+
+let = 函數內宣告 會只作用在函數內
+如果在外宣告就會當作全域變數 就跟var一樣
+且同區域內不可以重複宣告(分開可)
+
+
+const 與let類似 且必須同時給予數值 
+
+length 字串長度
+indexOf("字元") 會傳字串內該字元出現的索引位置
+slice(a,b) 回傳指定範圍內(a to b) 的字元 負號會從後面算
+replace 替換字串
+toUpperCase() 大寫
+toLowerCase() 小寫
+concat()連接字串
+trim("  A  B  ")  刪除括弧內字串的空格
+split() 陣列切割 可搭配for or while True

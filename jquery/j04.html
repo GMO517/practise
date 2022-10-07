@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .controller {
+      display: block;
+      padding: 6px 10px;
+      background-color: #000;
+      color: #fff;
+      width: 300px;
+      text-decoration: none;
+    }
+
+    .text {
+      width: 280px;
+      padding: 20px;
+      background-color: #ccc;
+      /* display: none; */
+    }
+
+    .text.x {
+
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#" class="controller con1">ON/OFF</a>
+  <div class="text tx1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, omnis natus? Fugiat
+    nihil
+    hic odio repellendus. Enim recusandae quaerat obcaecati officiis. Laudantium corrupti labore veritatis quod pariatur
+    nulla minus illum.</div>
+  <a href="#" class="controller con2">ON/OFF</a>
+  <div class="text tx2">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit, omnis natus? Fugiat
+    nihil
+    hic odio repellendus. Enim recusandae quaerat obcaecati officiis. Laudantium corrupti labore veritatis quod pariatur
+    nulla minus illum.</div>
+  <script src="js/jquery.min.js"></script>
+  <!-- ^--務必放在所有物件上面 不然不會動-->
+  <script>
+    $(document).ready(function () {
+
+
+
+      $('.con1').click(function () {
+        $('.tx1').toggleClass('x');
+      })
+      $('.con2').click(function () {
+        $('.tx2').toggleClass('x');
+      })
+
+
+
+    })
+  </script>
+
+
+
+</body>
+
+</html>

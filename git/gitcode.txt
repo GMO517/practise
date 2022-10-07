@@ -1,0 +1,27 @@
+git init 開啟儲存庫
+cd 進資料夾
+git add . 將檔案加入索引
+git commit -m "索引名稱" 將索引檔案變成一個更新(commit)
+git log 觀察 commit 歷史紀錄
+註冊遠端儲存庫：git remote add origin 遠端儲存庫網址 orgin 可改
+更新資料到遠端 master 分支：git push -u origin master
+orgin有改記得要改字
+* 下載遠端數據庫： git clone 數據庫網址
+* 更新遠端數據庫： git push origin master
+
+
+* branch ：分支，預設分支叫做 master
+* HEAD：指標 
+* origin：預設遠端儲存庫名稱
+* 回頭觀看版本內容：git checkout 編號
+* 返回最新的版本：git checkout master(分支名稱)
+新增分支：git branch 分支名稱
+查看分支：git branch 
+切換分支：git checkout 分支名稱
+刪除分支：git branch -d 分支名稱 、-D 是強制刪除
+還原上個版本：git reset HEAD^
+
+合併分支：git merge 分支名稱
+取消快轉：git merge 分支名稱 --no-ff
+觀看線圖：git log —oneline -graph
+還原合併前狀態：git reset —hard ORIG_HEAD

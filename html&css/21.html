@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- RWD -->
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .banner img {
+      width: 100%;
+    }
+
+    img {
+      vertical-align: bottom;
+      /*bottem top middle皆可但就不要base-line 第一張圖會有空隙*/
+    }
+
+    .footer {
+      background-color: #333;
+      color: #aaa;
+      text-align-last: left;
+      padding: 10px 0;
+    }
+
+    .item-group {
+      width: 100%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .title {
+      margin: 0 0px 20px;
+      padding: 30px 10px;
+      background-color: #ccc;
+    }
+
+    .title h2 {
+      text-align: center;
+      font-size: 46px;
+    }
+
+    .title p {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    .item {
+      margin: 0 10px 40px;
+    }
+
+    .item .text h3 {
+
+      font-size: 24px;
+      text-align: center;
+    }
+
+    .item .pic img {
+      width: 100%;
+    }
+
+    .service {
+      padding: 60px 0;
+      /*也可以改成margin 上下就不會有背景色*/
+      background-color: #ffa;
+    }
+
+    @media screen and (min-width:768px) {
+      .item-group {
+        display: flex;
+        /* 媒體查詢 */
+      }
+
+      .service .item {
+        display: flex;
+      }
+
+      .service .item .pic,
+      .service .item .text {
+        width: 50%;
+        margin: 0;
+      }
+
+      .service .item .text {
+        display: flex;
+        padding: 0 20px;
+        box-sizing: border-box;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+    }
+
+    #menu_control {
+      position: absolute;
+      z-index: 2;
+      opacity: 0;
+    }
+
+    .header {
+      height: 50px;
+      background-color: #ccc;
+      position: relative;
+    }
+
+    .logo {
+      width: 60px;
+      height: 40px;
+      margin-left: 10px;
+    }
+
+    .logo img {
+      display: block;
+      height: 40px;
+      /* vertical-align: top; */
+    }
+
+    .menu_btn {
+      width: 40px;
+      height: 40px;
+      background-color: #000;
+      display: block;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+
+    .menu_btn span {
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      display: block;
+      overflow: hidden;
+    }
+
+    .menu_btn::before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      left: 2px;
+      width: 36px;
+      background-color: #aaa;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      box-shadow: 0px 8px 0px #aaa,
+        0px -8px 0px #aaa;
+    }
+
+    nav {
+      /* width: 80%;
+      height: calc(100vh - 50px);
+      高度-header的50px
+      height: 100vh;
+      vh 視窗高度
+      background-color: #000;
+      position: absolute;
+      top: 50px;
+      left: -100%;
+      transition: .5s; */
+    }
+
+
+
+    nav a {
+      display: block;
+      text-decoration: none;
+      color: #a6e22c;
+      padding: 10px 20px;
+      border-bottom: 1px solid #a6e22c;
+    }
+
+    #menu_control:checked~.header nav {
+      left: 0;
+    }
+
+    @media screen and (max-width:767px) {
+      nav {
+        width: 80%;
+        height: calc(100vh - 50px);
+        /*高度-header的50px*/
+        /* height: 100vh; */
+        /*vh 視窗高度*/
+        background-color: #000;
+        position: absolute;
+        top: 50px;
+        left: -100%;
+        transition: .5s;
+      }
+    }
+
+
+    @media screen and (min-width:768px) {
+      .menu_btn {
+        display: none;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #282923;
+        align-items: center;
+      }
+
+      .logo {
+        margin-top: none;
+      }
+
+      nav {
+        position: relative;
+        left: 0;
+        display: flex;
+        width: auto;
+        height: auto;
+        top: 0;
+        background-color: transparent;
+      }
+
+      nav a {
+        border-bottom: none;
+      }
+    }
+
+
+    /* .item-group {
+      display: flex;
+    } */
+  </style>
+</head>
+
+<body>
+  <input type="checkbox" name="" id="menu_control">
+
+  <div class="header">
+    <h1 class="logo">
+      <a href="#">
+        <img src="https://picsum.photos/60/40/?random=1"></a>
+    </h1>
+    <label for="menu_control" class="menu_btn">
+      <!-- for跟id變數名字一樣就好 -->
+      <span>選單</span>
+    </label>
+    <nav>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+      <a href="#">link</a>
+    </nav>
+  </div>
+  <div class="banner">
+    <img src="https://picsum.photos/1400/500/?random=10">
+  </div>
+  <div class="about">
+    <div class="wrap">
+      <div class="title">
+        <h2>關於我們</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repudiandae maxime debitis recusandae
+          labore, laboriosam magni a voluptatibus aspernatur! Exercitationem.
+        </p>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div class="service">
+    <div class="wrap">
+
+      <div class="item-group">
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="about">
+    <div class="wrap">
+      <div class="title">
+        <h2>關於我們</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repudiandae maxime debitis recusandae
+          labore, laboriosam magni a voluptatibus aspernatur! Exercitationem.
+        </p>
+      </div>
+      <div class="item-group">
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+        <div class="item">
+          <div class="pic">
+            <img src="https://picsum.photos/300/200/?random=10">
+          </div>
+          <div class="text">
+            <h3>title</h3>
+            <p>付款對此成績出售事件銀行估計，主要經典妻子從此，選手教材江湖說什麼促銷相對電視劇評價暫無開始未來隨後你知道，轉變重視也。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy;copyright 2018 by gmo
+  </div>
+</body>
+
+</html>

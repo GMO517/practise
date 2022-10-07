@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box-a {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #aaa;
+    }
+
+    .box-b {
+      width: 200px;
+      height: 200px;
+      display: inline-block;
+      background-color: #faa;
+    }
+
+    .content {
+      display: none;
+    }
+
+    .product-title {
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      cursor: pointer;
+      /* 假象 預防成為超連結 */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box-a">A</div>
+  <div class="box-b">B</div>
+
+  <div class="product-title">產品介紹</div>
+  <div class="content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, velit laudantium! Eos illum,
+    voluptates iusto repudiandae laborum deleniti earum cumque ducimus nulla mollitia maxime veritatis officiis, natus,
+    quos fugiat sed!
+  </div>
+
+
+
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+  -->
+  <!-- 連網版 沒網路會掛掉 -->
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $(".box-a").dblclick(function () {
+        $(".box-b").toggle();
+        // $(".box-b").hide();
+      })
+
+
+      $('.product-title').click(function () {
+        $('.content').toggle();
+      })
+
+      // $("CSS選取器").動作(function函式(){})
+      // $("標籤")
+      // $(".classname")
+      // $("#idname")
+
+    })
+  </script>
+</body>
+
+</html>

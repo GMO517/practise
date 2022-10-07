@@ -1,0 +1,6 @@
+事件
+dblclick = double click
+toggle 偵測狀態 隱藏的話會顯示 反之
+slideIN/Down/Toggle() 偵測有無展開
+fadeIN/Down/Toggle 大略同上顯示不同
+fadeout 不斷改變透明度 直到0 再變化成display none

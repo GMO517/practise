@@ -1,0 +1,119 @@
+裝置尺寸代號(也就是格線系統):
+ex:
+預設全部是12欄 總和超過12會折行 小於會留空
+分兩段就是各6
+<div class="col-12 col-sm-12 col-md-6 name"></div>
+手機(預設)直 .col-(占掉的欄寬數) ex .col-2
+手機 橫 .col-sm-(占掉的欄寬數)
+
+平板 直 .col-md-(占掉的欄寬數)
+平板 橫 .col-lg-(占掉的欄寬數)
+
+桌機 .col-xl-(占掉的欄寬數)
+
+格線定位
+row:
+<div class="row justify-content-center"> 置中 要放在父層!(col-12上一層)
+
+<div class="row justify-content-start/end"> 置左/置右 要放在父層!(col-12上一層)
+
+justify-content-between/around 平均分配(空白多/空白少)
+
+align-items-center 垂直置中 要設定高度 100% 直接h-100也可以 
+
+.order
+order-first
+order-last
+order-1~12 設定格線系統順序 可以配合RWD
+
+.img
+<img src="#" class="img-fluid">
+img-fluid 依父元素進行縮放 不會超過原始寬度
+w-100比較好用 但解析度不夠會糊掉
+
+
+figure 圖片區
+
+sizing 控制大小
+
+
+Spacing 間距 可以看縮寫 可以配合RWD控制
+不能w-XX跟h-XX一起用
+mr-auto ml-auto = mx-auto
+me-auto ms-auto(不是左右而是開始star結束end了)
+
+卡片組件Cards
+圖片要改長寬要去用css調整
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+卡片組card-group 
+
+超連結 listgroup
+list-group-item-action 會有移上去的特效
+active 作用中 會反藍
+list-group-flush 不要圓角
+
+navbar
+
+Breadcrumb 超連結列麵包屑
+
+display
+d-none 隱藏
+ Hidden only on xs .d-none .d-sm-block 可以用裝置代號控制
+
+flex 排列
+flex-row 橫向排列
+flex-column 橫向排列
+justify-content-start/center
+
+Carousel幻燈片
+carouselExampleCaptions 如果多做要調整名稱
+
+modal光箱效果 彈出視窗
+data-bs-toggle="modal" data-bs-target="#exampleModal"
+丟進超連結按下去就會啟動
+
+Scrolling long content 長資料處理
+modal-dialog modal-dialog-scrollable 一樣放modal-dialog
+
+<div class="modal-dialog modal-dialog-centered"> 會將視窗置中
+modal-fullscreen-sm-down 特定裝置全屏視窗
+
+
+tooltips & popover 提示
+記得要先裝上JS的程式碼
+內容要寫在data-bs-title
+
+Collapse 收合區塊
+任何標籤(div、a、img)加上data-bs-toggle  data-bs-target 都可以有作用
+
+Accordion 手風琴 類似收合區塊
+一組以上要把id跟data-parent調整一下 target跟 ariacontrol 還有底下id 也是要改
+
+colors 色彩
+色彩名字不是顏色 而是功能 
+文字色彩
+.text-primary 藍 
+.text-secondary 灰
+.text-success 綠
+.text-danger 紅
+.text-warning 黃
+.text-info  淺藍
+.text-light 白
+.text-muted 弱化
+.text-black-50 後面表示透明度50
+
+
+overflow 資料溢出
+
+button 按鈕
+按鈕功能取消 disable
+
+sass
+<class>
+container 定寬容器
+container-fluid 不定寬
+background-size: cover;
+

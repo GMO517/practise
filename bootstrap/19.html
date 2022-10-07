@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<!-- 麵包屑/路徑列 -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    .path {
+      background: #faa;
+    }
+
+    .path1 {
+      background: #ffa;
+    }
+
+    .bc2 {
+      background-color: transparent;
+    }
+
+    .breadcrumb-item a {
+      color: #000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="path1">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb bc1">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="path">
+    <div class="container">
+      <ol class="breadcrumb bc2">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Library</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Data</li>
+      </ol>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
