@@ -1,18 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript Test</title>
+
+</head>
 
 <body>
+  <div class="header">
+    <h1>數組</h1>
 
-  <p id="p1">
-    这是文本。
-    这是文本。
-    这是文本。
-    这是文本。
-  </p>
+  </div>
+  <div class="container">
 
-  <input type="button" value="隐藏文本" onclick="document.getElementById('p1').style.visibility='hidden'">
-  <input type="button" value="显示文本" onclick="document.getElementById('p1').style.visibility='visible'">
+  </div>
+
 
 </body>
+<script>
+  var a = new Array;
+  var b = []; //同上行
+  a[0] = "dog";
+  console.log(a[0]);
+  console.log(a.length);
+  a[1] = "cat";
+  console.log(a);
+  console.log(a.length);
+  for (let i = 0; i < 9; i++) {
+    a[i] = i;
+  }
+  console.log(a);
+  b = ["dog", "cat", "tiger"];
+  for (let i = 0; i < b.length; i++) {
+    console.log(b[i]); //迴圈取值 有空值會undefine
+  }
+
+  for (let i in a) {
+    console.log(a[i]); //空值不會undefine
+  }
+
+  b.push("sheep");//加在末尾
+  console.log(b);
+
+
+  b.shift(); //會從開頭刪除
+  console.log(b);
+  b.pop(); //會從末尾刪除
+  console.log(b);
+
+  b.reverse(); //反轉 
+  console.log(b);
+
+  b.unshift("Lion");//加在開頭
+  console.log(b);
+
+</script>
 
 </html>

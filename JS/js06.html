@@ -1,48 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<!-- 動畫 -->
-<style>
-  #container {
-    width: 400px;
-    height: 400px;
-    position: relative;
-    background: yellow;
-  }
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript Test</title>
 
-  #animate {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    background-color: red;
-  }
-</style>
+</head>
 
 <body>
+  <div class="header">
+    <h1>函數Function</h1>
 
-  <p><button onclick="myMove()">单击我</button></p>
+  </div>
+  <div class="container">
 
-  <div id="container">
-    <div id="animate"></div>
   </div>
 
-  <script>
-    function myMove() {
-      var elem = document.getElementById("animate");
-      var pos = 0;
-      var id = setInterval(frame, 5);
-      function frame() {
-        if (pos == 350) {
-          clearInterval(id);
-        } else {
-          pos++;
-          elem.style.top = pos + "px";
-          elem.style.left = pos + "px";
-        }
-      }
-    }
-  </script>
 
 </body>
+<script>
+  let a = 1;
+  function add1() {
+    a++;
+  }
+  console.log(a); //沒呼叫不會執行
+  add1();
+  console.log(a); //會變成2
+  function add2(x) {
+    a += x;
+  }
+  add2(4); //傳值
+  console.log(a);
+
+  function add3() {
+    let sum = 0;
+    for (let i = 0, j = arguments.length; i < j; i++) {
+      sum += arguments[i]; //argument傳入值有幾個 範例有四個
+    }
+    return sum;
+  }
+  let sum = add3(1, 2, 3, 4); //return的話要let sum
+  console.log(sum);
+</script>
 
 </html>

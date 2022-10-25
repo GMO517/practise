@@ -1,13 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Javascript Test</title>
+
+</head>
 
 <body>
+  <div class="header">
+    <h1>Object</h1>
 
-  <h1 id="id1">我的标题</h1>
+  </div>
+  <div class="container">
+    <h2>跟lst很像</h2>
+  </div>
 
-  <button type="button" onclick="document.getElementById('id1').style.color = 'red'">
-    单击我！</button>
 
 </body>
+<script>
+  var obj1 = new Object();
+  var obj2 = {}; //跟上面同樣
+  obj1 = {
+    name: "ABC",
+    age: '12',
+    contact: {
+      phone: "1234567"
+    }
+  }
+
+  console.log(obj1);
+  console.log(obj1.name); //選擇要輸出哪個屬性
+  console.log(obj1.contact.phone);
+
+  console.log(obj1["contact"]["phone"]); //同上行
+
+  obj1.age = "21"; //可更改屬性
+  obj1.contact.FB = "小明"; //也可以新增
+  console.log(obj1.contact);
+
+</script>
 
 </html>

@@ -21,29 +21,26 @@
 
 </body>
 <script>
-  var name = "BBB";
+  var name = "AAA";
   var age = 20;
-  if (name == "AAA") {
-    console.log("AAA");
-  } else if (name == "BBB") {
-    console.log("BBB");
-  } else {
-    console.log("CCC");
+  for (let i = 0; i < 5; i++) {
+    //記得用let
+    age++;
+    console.log(age);
   }
+  var allowed = (age >= 18) ? "Yes" : "No";
+  //變數 = 條件 ? 符合返回 : 不符合返回 三元運算子
 
-  // while (true) {
-  //console.log("true"); 無限迴圈 同python 
-  //}
-  var a = 19;
-  do {
-    a++;
-    console.log(a);
-  } while (age == a) //先做再判斷條件
-
-  if (true) {
-    let age = 20;
+  switch (name) {
+    case 'Simon':
+      console.log("Simon");
+      break;
+    case 'John':
+      console.log("John");
+      break;
+    default: // 同else
+      console.log("333");
   }
-
 
 </script>
 
