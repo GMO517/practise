@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>檢查空對象</title>
+</head>
+
+<body>
+  <!-- 写一个 isEmpty(obj) 函数，当对象没有属性的时候返回 true，否则返回 false。 -->
+  <script>
+    function isEmpty(obj) {
+      for (let key in obj) {
+        //如果進到循環裡面,就代表有class
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+
+</html>
