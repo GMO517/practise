@@ -1,0 +1,18 @@
+1>>post = 事件接收
+    req.on('data'):每次發送的數據
+    req.on('end'):數據發送完成
+2>>get = url傳值
+3>>mysql
+    查詢語句
+        select *from 表名稱:查詢所有
+        select *from 表名稱 where 條件A ? and 條件B=? :條件查詢 
+        
+
+      connection.query('select *from 表名稱 where 條件A ? and 條件B=?',[第一個?,第二個?],(err,results,fields)=>{
+        if(err) throw err;
+        if(results.lenth>0){
+          console.log('登入成功')
+        }
+
+      })
+4>>express :基於node.js的應用開發框架
