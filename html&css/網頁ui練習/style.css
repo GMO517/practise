@@ -1,0 +1,79 @@
+  .title-container {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .title-btn {
+    margin: 8px;
+  }
+
+  #page-title {
+    color: blueviolet;
+    margin: 0;
+    /* text-align: center; */
+    font-size: 40px;
+  }
+
+  /* 注意順序性 會照順序優先套用 後面的會無效 */
+  h1 {
+    color: red;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .middle_button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 200px;
+    height: 200px;
+    font-size: 48px;
+    border-radius: 50%;
+    top: 250px;
+    left: 40%;
+    position: absolute;
+    border: none;
+  }
+
+  #cover {
+    /* 滿版圖片 */
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: bottom;
+    /* 上方截掉 */
+    background-color: aliceblue;
+  }
+
+  #bg-cover {
+    background-image: url("./public/bg_img.webp");
+    width: 100%;
+    height: 350px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: aliceblue;
+    background-attachment: fixed;
+    display: table;
+  }
+
+  section {
+    background-color: beige;
+    padding: 6px;
+    margin: 16;
+  }
+
+  .title {
+    color: blue;
+  }
+
+
+  .description {
+    color: gray;
+  }
+
+  .read-more {
+    color: lightblue;
+  }
