@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>偽元素示範1</title>
+  <style>
+    a:link {
+      color: gray;
+    }
+
+    a:hover {
+      color: green;
+    }
+
+    a:visited {
+      color: blue;
+    }
+
+    a:visited:hover {
+      color: yellow;
+    }
+
+    a:active {
+      background-color: #000;
+
+    }
+
+    p:hover {
+      background: red;
+      cursor: pointer;
+      /* 改滑鼠 */
+    }
+
+
+    div::before {
+      content: url(https://picsum.photos/300/200/?random=10);
+    }
+
+    div::after {
+      content: "後面加上的字";
+    }
+
+    ::selection {
+      /* 被選取 */
+      /* 也可以單獨針對標籤使用 */
+      color: white;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <b><a href="#" target="_blank">偽元素練習</a></b><br>
+  <b><a href="#" target="_blank">google</a></b><br>
+  <p>hello</p>
+  <br>
+  <div>本文 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, officiis.</div>
+
+</body>
+
+</html>

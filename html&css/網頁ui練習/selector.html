@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>進階選擇器</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 600px;
+      height: 1000px;
+      background-color: #ffa;
+    }
+
+    .card {
+      border: 3px solid black;
+    }
+
+    ._image {
+      width: 100%;
+      vertical-align: bottom;
+      /* 不用這個會多一條 */
+    }
+
+    .card-action {
+      background-color: white;
+      display: table;
+      width: 100%;
+      /* 解決圖片底下空隙用 */
+    }
+
+    ._container {
+      display: table-cell;
+      padding: 16px;
+    }
+
+    .link {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="card-image">
+        <a href="#">
+          <img class="_image" src="https://picsum.photos/700/300/?random=10">
+        </a>
+      </div>
+      <div class="card-action">
+        <div class="_container">
+          <a href="#" class="link">
+            <button type="button">
+              閱讀更多
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

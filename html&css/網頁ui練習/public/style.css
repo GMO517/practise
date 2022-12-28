@@ -27,14 +27,31 @@
   .middle_button {
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
-    width: 200px;
-    height: 200px;
+    width: 80px;
+    height: 80px;
     font-size: 48px;
     border-radius: 50%;
-    top: 250px;
-    left: 40%;
-    position: absolute;
+    bottom: 6%;
+    right: 6%;
+    position: fixed;
     border: none;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .author_span {
+    position: absolute;
+    left: 16px;
+    top: 16px;
+  }
+
+
+  .addNew_button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    z-index: 1;
+    /* height: 50px; */
   }
 
   #cover {
@@ -62,7 +79,7 @@
   section {
     background-color: beige;
     padding: 6px;
-    margin: 16;
+    margin: 16px;
   }
 
   .title {

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>偽元素示範2</title>
+  <style>
+    ul {
+      list-style: none;
+      padding-left: 0;
+      /* 會自帶位移 可以刪掉 */
+    }
+
+    /* 下面要關起來才有用  */
+    li:first-child {
+      color: blue;
+    }
+
+    /* 指定第幾個 */
+    li:nth-child(2) {
+      background: pink;
+    }
+
+    /* 指定奇數偶數 */
+    li:nth-child(odd) {
+      background: pink;
+    }
+
+    li:nth-child(even) {
+      background: yellow;
+    }
+
+    /* 倍數指定法 這邊是四的倍數 也可以2n+1*/
+    li:nth-child(4n) {
+      background: green;
+    }
+
+    li:last-child {
+      color: red;
+    }
+
+    p:first-child {
+      color: purple;
+    }
+
+    p:last-child {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>p示範</h1>
+  <div>
+    <p>001</p>
+    <p>002</p>
+    <p>003</p>
+    <p>004</p>
+  </div>
+  <b>
+    <hr>
+  </b>
+  <h1>ul li 示範</h1>
+  <ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+  </ul>
+</body>
+
+</html>
