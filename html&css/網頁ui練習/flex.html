@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./public/normalize.css">
+  <title>定位範例</title>
+  <style>
+    .row {
+      display: flex;
+
+      /* ==========flex-flow有關========== */
+      /* flex-flow: row nowrap; */
+      flex-direction: row;
+      flex-wrap: nowrap;
+      /* ==========其他========== */
+      justify-content: flex-start;
+      align-items: flex-start;
+      /*只適用於多行，flex-wrap:nowrap;下沒作用*/
+      /* align-content: stretch; */
+    }
+
+    .item {
+      /* flex有關 */
+      flex: 0 0 25%;
+
+      /* 如果可分配空間大於設定，要不要變大 */
+      /* flex-grow: 0; */
+
+      /* 如果可分配空間小於設定，要不要變小 */
+      /* flex-shrink: 0; */
+      /* flex-basis: 25%; */
+
+      /* ==========其他========== */
+      /* 順序，最好個別指定，比較不是和用在全部都有的class */
+      /* order: 0; */
+
+      /* 外面的align-items設定全部，可以用align-self蓋掉  */
+      /* align-self: flex-start; */
+      ;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="row" style="background-color: pink;">
+    <div class="item" style="background-color: red;">
+      1
+    </div>
+    <div class="item" style="background-color: yellow;">
+      2
+    </div>
+    <div class="item" style="background-color: blue;">
+      3
+    </div>
+    <div class="item" style="background-color: gray;">
+      4
+    </div>
+
+  </div>
+</body>
+
+</html>
