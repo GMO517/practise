@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+}
+
+.container {
+  max-width: 1240px;
+}
+
+.row {
+  display: table;
+  width: 100%;
+}
+
+.col-phone-100 {
+  width: 100%;
+  float: left;
+}
+
+.col-phone-67 {
+  width: 67%;
+  float: left;
+}
+
+.col-phone-50 {
+  width: 50%;
+  float: left;
+}
+
+.col-phone-33 {
+  width: 33%;
+  float: left;
+}
+
+.col-phone-25 {
+  width: 25%;
+  float: left;
+}
+
+/* navbar */
+.nav {
+  height: 64px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.36);
+  position: fixed;
+}
+
+.nav .nav-btn {
+  background: none;
+  border: none;
+  height: 64px;
+  width: 64px;
+  font-size: 16px;
+}
+
+
+/* TODO */
+.nav .nav-button>.fa-bars {
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+  color: white;
+}
+
+/* 首頁標語 */
+.index-cover {
+  background-image: url("./bg_img.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 400px;
+  width: 100%;
+  display: table;
+}
+
+.index-cover .index-container {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.index-cover .index-container ._title {
+  margin: 0;
+  margin-bottom: 56px;
+  font-size: 72px;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
+
+}
+
+.index-cover .index-container .btn {
+  padding: 8px 20px;
+  /* background-color: rgb(111, 134, 223); */
+  border: none;
+  border-radius: 12px;
+  height: 45px;
+  width: 80px;
+  font-size: 18px;
+  margin: 0 8px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.24);
+}
+
+.index-cover .index-container .btn.btn_light {
+  background-color: #AAABD3;
+  color: white;
+}
+
+.index-cover .index-container .btn.btn_dark {
+  background-color: #353866;
+  color: white;
+}
+
+.images {
+  width: 100%;
+}
+
+@media (min-width:768px) {
+  /* for平板 */
+
+  .col-tablet-100 {
+    width: 100%;
+    float: left;
+  }
+
+  .col-tablet-67 {
+    width: 67%;
+    float: left;
+  }
+
+  .col-tablet-50 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-tablet-33 {
+    width: 33%;
+    float: left;
+  }
+
+  .col-tablet-25 {
+    width: 25%;
+    float: left;
+  }
+}
+
+@media (min-width:992px) {
+
+  /* for筆電 桌機 */
+  .col-desktop-100 {
+    width: 100%;
+    float: left;
+  }
+
+  .col-desktop-67 {
+    width: 67%;
+    float: left;
+  }
+
+  .col-desktop-50 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-desktop-33 {
+    width: 33%;
+    float: left;
+  }
+
+  .col-desktop-25 {
+    width: 25%;
+    float: left;
+  }
+}

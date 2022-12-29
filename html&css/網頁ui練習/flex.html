@@ -13,11 +13,20 @@
 
       /* ==========flex-flow有關========== */
       /* flex-flow: row nowrap; */
+
       flex-direction: row;
+      /* 用於決定排序方式 row橫列 columns直行 可以跟order一起用*/
+      /* row-reverse columns-reverse 反轉 */
+
       flex-wrap: nowrap;
+      /* 決定超過一行會不會限制在這空間 wrap 會換行 */
+
       /* ==========其他========== */
       justify-content: flex-start;
-      align-items: flex-start;
+      /* 管橫向的 跟bs差不多 靠左靠右靠中 star end center*/
+      /* align-items: flex-start; */
+      align-content: stretch;
+      /* 管直向的 */
       /*只適用於多行，flex-wrap:nowrap;下沒作用*/
       /* align-content: stretch; */
     }
@@ -25,16 +34,19 @@
     .item {
       /* flex有關 */
       flex: 0 0 25%;
+      /* 三個數字分別代表grow shrink basis */
 
       /* 如果可分配空間大於設定，要不要變大 */
-      /* flex-grow: 0; */
+      /* flex-grow: 0; 注意數字是倍數*/
 
       /* 如果可分配空間小於設定，要不要變小 */
-      /* flex-shrink: 0; */
+      /* flex-shrink: 0; 注意數字是倍數*/
+
+      /* 用於空間分配 */
       /* flex-basis: 25%; */
 
       /* ==========其他========== */
-      /* 順序，最好個別指定，比較不是和用在全部都有的class */
+      /* 用於排順序，最好個別指定，比較不是和用在全部都有的class */
       /* order: 0; */
 
       /* 外面的align-items設定全部，可以用align-self蓋掉  */
