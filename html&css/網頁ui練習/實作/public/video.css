@@ -1,0 +1,41 @@
+ .video-player {
+   margin: 8px;
+ }
+
+ .video-list-container {
+   margin: 8px;
+   border-radius: 8px;
+   box-shadow:
+     0 2px 2px 0 rgba(0, 0, 0, .14),
+     0 3px 1px -2px rgba(0, 0, 0, .2),
+     0 1px 5px 0 rgba(0, 0, 0, .12);
+   overflow: hidden;
+   background-color: white;
+ }
+
+ ul.video-list {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+   /* 要設0不然video-list-container會往下跑 */
+
+   /* margin: 8px; 不關掉橫向卷軸會跑出來*/
+   border-radius: 8px;
+   overflow-y: scroll;
+ }
+
+ ._video {
+   padding: 16px 16px;
+   cursor: pointer;
+ }
+
+ @media (max-width:767px) {
+   .video-list-container .ratio_8_9 {
+     padding-bottom: 0;
+   }
+
+   .video-list-container .ratio_8_9>.ratio_content {
+     position: static;
+     height: auto;
+   }
+ }

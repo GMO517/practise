@@ -1,0 +1,83 @@
+.col-phone-100 {
+  width: 100%;
+  float: left;
+}
+
+.col-phone-67 {
+  width: 67%;
+  float: left;
+}
+
+.col-phone-50 {
+  width: 50%;
+  float: left;
+}
+
+.col-phone-33 {
+  width: 33.33%;
+  float: left;
+}
+
+.col-phone-25 {
+  width: 25%;
+  float: left;
+}
+
+@media (min-width:768px) {
+  /* for平板 */
+
+  .col-tablet-100 {
+    width: 100%;
+    float: left;
+  }
+
+  .col-tablet-67 {
+    width: 66.67%;
+    float: left;
+  }
+
+  .col-tablet-50 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-tablet-33 {
+    width: 33.33%;
+    float: left;
+  }
+
+  .col-tablet-25 {
+    width: 25%;
+    float: left;
+  }
+}
+
+@media (min-width:992px) {
+
+  /* for筆電 桌機 */
+  .col-desktop-100 {
+    width: 100%;
+    float: left;
+  }
+
+  .col-desktop-67 {
+    width: 66.67%;
+    float: left;
+  }
+
+  .col-desktop-50 {
+    width: 50%;
+    float: left;
+  }
+
+  .col-desktop-33 {
+    width: 33.33%;
+    float: left;
+  }
+
+  .col-desktop-25 {
+    width: 25%;
+    float: left;
+  }
+
+}
