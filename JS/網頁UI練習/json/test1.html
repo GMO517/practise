@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON範例</title>
+</head>
+
+<body>
+  <h1>title</h1>
+</body>
+<script>
+
+  // JSON.parse() string to object
+  // JSON.stringify() object to string
+
+  let school = {
+    name: "Bar",
+    course: [
+      { name: "HTML" }, { name: '123' }, { name: 'BS' }
+    ],
+    id: 1,
+    test: function () {
+      alert("test");
+    }
+  }
+
+  console.log(school);
+
+  let jsonString = JSON.stringify(school);
+
+  console.log(jsonString);
+  let newObject = JSON.parse(jsonString);
+  console.log(newObject);
+  console.log(newObject.id.toString());
+  //轉成function會不見
+</script>
+
+</html>
