@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        //this 函式本身會帶著this
+        //this函式 與 函式如何定宣告並無關聯性!,與呼叫方法有關
+
+        //----this調用方式------           
+        //1.作為物件方法(常運用的this.)
+        //2.簡易呼叫(多數的呼叫方式)
+        //3. bind,apply,call方法(直接把函式綁定特地的this方法)
+        //4. new
+        //5. DOM事件處理器
+        //6. 箭頭函式
+        //-----------------------
+
+        //---------1----------------------
+        // var myname="我是全域的Tom"
+        //     function callName(){
+        //         console.log(this.myname)//this會指向profile這個物件
+        //     }//所以this會從profile物件裡找myname
+
+        //     var profile={
+        //         myname:"Tom",
+        //         CallSomeon:callName//函式本身帶有this
+        //     }
+        //     profile.CallSomeon()
+        //     var Call_fake_Someon = profile.CallSomeon
+        //     Call_fake_Someon()//它的呼叫方式因為是全域的所以會往全域跑
+        //------------------------------------------   
+
+
+        //----------2--------------------------------
+        //盡可能不要使用簡易呼叫的this，因為本質是undefined(詳情看嚴謹模式)
+        //因為它不是在window下的函式
+    //     var CarName = "Fake_audi"
+    //     var car = {
+    //         CarName: "audi"
+    //         , Callcar:
+    //             function () {
+    //                   let self = this// //可利用在函式多賦予值給this方式來確保指向正確
+    //                 setTimeout( function() { 
+    //                     console.log("CarName:" + self.CarName)
+    //                 },1000)
+    //           e  }//這時this會指向window全域CarName
+
+    //     }
+    //   car.Callcar()
+    //-----------------------------------------
+
+
+    //----3-----call,apply,bind----------------
+            // var Car_Name = "Fake_audi"
+            // var car={
+            //     Car_Name:"audi",
+            // }
+
+            // function fn(par1,par2){
+            //     console.log(this,par1,par2)
+            // }
+            // fn.call(car,1,2)//立刻執行 car=this
+            // fn.apply(car,[3,4])//以陣列方式
+
+
+
+            // var fn2 = fn.bind(car, "toyota","porsche");//調用時才會執行
+            // fn2()
+            //----------------------------------
+
+
+            //進階觀念------嚴謹模式------------'use strict'
+            //    function fn(par1,par2){
+            //     console.log(this,par1,par2)
+            // }
+
+            // // fn.call(1,"toyota", "porsche")//這時1為物件型別
+            // // fn.call("test","toyota", "porsche")//this會是物件型別
+            // // fn.call(undefined,"toyota", "porsche")//this會指向window，非嚴謹模式
+
+
+            // (function(){
+            //     'use strict';//進入嚴格模式，在每個瀏覽器執行結果會不一樣
+            //      a="小名"
+            // })()
+            //-------------------------------------
+            // function x(){
+            //             console.log(this.name)
+            //         }
+            //     var obj={
+            //         name:"阿美",
+            //         callname:x
+            //     }
+
+            //    var a = obj.callname
+
+
+            //     var name="阿成"
+
+
+    </script>
+</body>
+
+</html>

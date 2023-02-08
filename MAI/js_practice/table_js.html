@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="03.html" method="post">
+        <label for="name">
+            商品名稱:<input type="text" name="product:[name]" >
+        </label><br>
+        <label for="price">
+            價格:<input type="text" name="price:[name]">
+        </label><br>
+        <button type="button" onclick="add()">新增品項</button>
+        <hr>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <td>編號</td>
+                    <td>名稱</td>
+                    <td>刪除</td>
+                </tr>
+            </tbody>
+        </table>
+        <table border="1" style="display: none;">
+            <tbody>
+                <tr id="temp">
+                    <td ><p id="opt_id">1</p></td>
+                    <td ><input type="text" id="opt_name"></td>
+                    <td> <button id="del_btn">刪除</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">送出</button>
+    </form>
+</body>
+<script>
+    var count=0
+    function add(){
+        
+        let tr = document.getElementById("temp")
+        
+        let tbody = document.getElementsByTagName("tbody")[0]
+        let Create_tr =tr.cloneNode(true)
+        Create_tr.querySelector("#opt_id").innerHTML=count
+        count++
+        let opt_input = tr.querySelector("#opt_name")
+        let product = "product[opt["+count+"]name]"
+        opt_input.setAttribute("name",product)
+        
+        tbody.appendChild(Create_tr)
+        
+
+    }
+
+</script>
+
+</html>

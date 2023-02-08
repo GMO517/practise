@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+//原型與屬性關係-------------------------
+            function person(){};
+            person.prototype.name='人類';
+
+            var casper = new person();
+            casper.a=undefined;
+            // Object.defineProperty(person.prototype,'name',{
+            //     enumerable:false
+            // })//修改特徵後屬性就一樣顏色
+
+            console.log(casper)
+
+            // console.log(casper.hasOwnProperty('a'));
+            // console.log(casper.hasOwnProperty('b'));
+            // console.log(casper.hasOwnProperty('name'));
+            //雖然原型是向上找，但hasOwnProperty是針對當前屬性查看
+
+            // for(var key in casper){
+            //     console.log(key);//會印出原型的name
+            // }
+            //自訂的屬性特徵(可列舉)與預設的原型屬性特徵(不可列舉)有差異
+
+            // console.log(Object.getOwnPropertyDescriptor(casper,'a'));
+            // console.log(Object.getOwnPropertyDescriptor(casper.__proto__,'name'))
+            // console.log(Object.getOwnPropertyDescriptor(casper.__proto__.__proto__,
+            // 'toString'))
+
+            for(const key in casper){//如果要列舉物件屬性出來
+                if(casper.hasOwnProperty(key)){//設定判斷式用來設定在當前物件
+                    const element = casper[key];
+                    console.log(element)
+                }
+            }
+
+
+    </script>
+</body>
+</html>

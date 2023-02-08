@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+
+        function money() { //閉包函式  子函式去找父函式的變數
+            var money = 0;
+            return function (price) {
+                money = money + price
+                return money
+            };
+        };
+
+        // function car_set(color){
+        //     color=color
+        //     console.log(color)
+
+        // }
+        // var car = car_set
+        // new car("red")
+        // new car("blue")
+
+
+
+        function storeMoney(initMoney) { //私有方法 可以有多種方法，在閉包裡面再寫物件，物件裡再寫函式
+            var money = initMoney || 1000 //預設1000元
+            return {//多種方法
+                increase: function (price) {
+                    money += price;
+                },
+                decrease: function (price) {
+                    money -= price;
+                },
+                value: function (p) {
+                    return money;
+                }
+
+            }
+        }   
+        var ming_money = storeMoney()
+
+        ming_money.increase(0)  //使用storeMoney()裡面的increase傳入給price
+        ming_money.decrease(100)
+        console.log(ming_money.value())
+
+
+
+
+    </script>
+</body>
+
+</html>

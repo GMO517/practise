@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+</body>
+<script>
+
+        //創造
+        let ming;//暫時性死區(TDZ)
+
+        //執行
+        console.log(ming);
+         ming="阿明"
+
+         //1.let 一樣有創造階段
+         //2.但會先出現TDZ，無法被呼叫(沒被瀏覽器宣告undefined)
+        //3.(文件不會表明這與var的hoisting相同概念)
+
+
+        console.log(typeof myname);//第三點
+        let myname="";
+
+
+        //Eslint 學習Es6的風格
+        //六角學院查看ES6章節
+        
+</script>
+</html>

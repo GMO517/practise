@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+        //如果為表達式(只回傳內容)可縮寫
+            const callname = (someone)=>  '我是'+ someone;
+            console.log(callname("小名"))
+
+        //如果只有一個參數括號可去掉
+        const callname2 = somename =>  '我是'+ somename;
+
+
+        //傳統函式帶有arguments(會把傳入參數都列出來),會是類陣列
+        const num = function nums(){
+            console.log(arguments);
+        }
+        num(1,2,3,4,5,6,7);
+
+        //箭頭函式則沒有帶，如果要帶的話使用...參數，會是陣列
+        const num2=(...arg)=>{
+            console.log(arg)
+        }
+
+        //如要用箭頭函式回傳物件要加括號 ()=> ({data:1});
+        //不然會被當成函式範圍的一部分
+
+        
+
+
+    </script>
+
+    
+</body>
+</html>

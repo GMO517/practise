@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let profile = {
+            name:"denny",
+            age:16,
+            locate:{
+                country:"kao",
+                city:"tai",
+                school:"lcvs"
+            }}
+        var profile_shallow={}
+        // profile_shallow=profile  //淺層複製
+        
+        // for( var key in profile){//淺層複製:更改物件第二層value會隨著更動
+        //     profile_shallow[key]=profile[key]
+        //     console.log(profile_shallow[key])
+        // }
+
+        var new_profile=Object.assign({},profile)//深層複製ES6語法
+        profile.name="tom"
+        console.log(new_profile,profile)
+        // var profile_deep=JSON.parse(JSON.stringify(profile))//深層複製JSON方式
+    </script>
+</body>
+</html>

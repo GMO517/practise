@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+
+        // var wallet = {//不使用函式的方式
+        //     total:100
+        //     ,set save(price){//setter 
+        //         this.total=this.total + price/2;
+        //     },
+        //     get save(){//get 取值不會存參數
+        //         return this.total/2
+        //     }
+        // }
+        // console.log(wallet.save,wallet)//點下值時才改變
+        // //Getter:取得特定值的方法
+        // // //Setter:存值的方法
+        // // wallet.save = 300;//set  以等號來放入值
+        // // console.log(wallet.total);
+        // // console.log(wallet.save);//get
+        //---------------------------------
+        var wallet = {
+            total:100
+        }
+        Object.defineProperty(wallet,'save',{//屬性特徵會與上面不同
+            set : function(price){
+                this.total=this.total + price/2;
+            },
+            get : function(){
+                return this.total/2;
+            }
+        });
+        wallet.save = 300;
+        console.log(wallet);
+
+        console.log(Object.getOwnPropertyDescriptor(wallet,'save'))
+        
+
+
+
+        var a=[1,2,3];//利用defineProperty來自訂方法
+        Object.defineProperty(Array.prototype,'latest',{
+            get: function(){
+                return this[this.length - 1];
+            }
+        })
+        console.log(a.latest)
+    </script>
+</body>
+
+</html>

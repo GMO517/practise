@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+            // var a = {
+            //     a:1,
+            //     b:2,
+            //     c:3
+            // };
+            // console.log(a)
+            // //Object.defineProperty 修改屬性特徵(value)
+            // //1.值 2.可否寫入 3.可否被刪除 4.可否被列舉(限制一些屬性被列舉出來)
+
+            // //Object.defineProperty(物件, 屬性, 參數)
+            // // Object.defineProperty(a,'a',{
+            // //     value:4,
+            // //     writable:false,//預設true
+            // //     configurable:true,
+            // //     enumerable:true
+            // // })
+            
+            // // (function(){
+            // //     'use strict'
+            // //     a.a=5;
+            // // }())
+            // // Object.defineProperty(a,'b',{
+            // //     configurable:false
+            // // })
+            // // delete a.b;
+   
+
+            // // Object.defineProperty(a,'c',{
+            // //     enumerable:false
+            // // })
+            // // for(var key in a){
+            // //     console.log('列舉',key)
+            // // }
+
+            // Object.defineProperty(a,'d',{ //淺層保護
+            //     value:{},                     
+            //     writable:false
+            // });
+            // a.d=6//而存值無法被新增
+            // a.d.hi=6;//在物件裡的新增屬性值可以被允許
+   
+
+
+            // Object.defineProperties(a,{   //多個物件調整
+            //     a:{
+            //         //1,2,3,4參數
+            //     },
+            //     b:{
+            //         //1,2,3,4參數
+            //     }
+            // })
+            // console.log(a)
+
+            
+
+    </script>
+</body>
+</html>
