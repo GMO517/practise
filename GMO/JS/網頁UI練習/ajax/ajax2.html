@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX練習2</title>
+</head>
+
+<body>
+  <div id="test">
+    AJAX測試
+  </div>
+  <button type="button" onclick="trigger()">trigger</button>
+  <script>
+    function createLinkByJson(jsonStr) {
+      let linkObject = JSON.parse(jsonStr);
+      let linkElement = document.createElement("a");
+      linkElement.setAttribute("href", linkObject.url);
+      linkElement.innerHTML = linkObject.name;
+      return linkElement;
+
+    }
+    function trigger() {
+      let count = 0;
+      var xhr = new XMLHttpRequest();
+      // xhr.onreadystatechange = function () {
+      //   console.log(count);
+      //   count++; //正常會有四階段所以會計數4次
+      // }
+
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && xhr.status == 200) {
+          //用於判定網頁是否完成加載 因為正常會有四次
+          //200是http status 的標準 代表ok的意思
+          if (xhr.getResponseHeader("Content-Type") === "application/json") {
+            //如果是json
+            let jsonStr = xhr.response;
+            let linkElement = createLinkByJson(jsonStr);
+            document.getElementById("test").innerHTML = linkElement.outerHTML;
+          } else if (xhr.getResponseHeader("Content-Type") === "text/html; charset = UTF-8") {
+            //text/html
+            //html
+            document.getElementById("test").innerHTML = xhr.response + "格式Html";
+          } else {
+            //other
+            document.getElementById("test").innerHTML = "未知格式" + xhr.getResponseHeader("Content-Type");
+          }
+        }
+      }
+      xhr.open("GET", "./test.json", true);
+      //method方式,目標檔案,是否使用非同步方式(基本上是要不然會卡住)
+      xhr.setRequestHeader("Content-Type", "application/json"); //要求回傳格式
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>

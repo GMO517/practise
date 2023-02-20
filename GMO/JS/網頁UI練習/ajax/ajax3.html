@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJAX POST</title>
+</head>
+
+<body>
+  <div id="test">
+    AJAX測試
+  </div>
+  <form onsubmit="sendData(this);">
+    <input type="text" name="name" value="GMO1">
+    <input type="text" name="url" value="GMO2">
+    <button type="submit">submit</button>
+  </form>
+  <button type="button" onclick="trigger();">trigger</button>
+  <script>
+    function sendData(form) {
+      e.preventDefault(); //== event preventDefault submit會跳轉 要關掉
+      var formData = new FormData(form);
+      console.log(formData);
+      trigger(formData);
+    }
+
+    function trigger(formData) {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && xhr.status == 200) {
+          if (this.getResponseHeader("Content-Type") === "application/json") {
+            //如果是json
+            let jsonStr = xhr.response;
+          }
+        } else if (this.readyState == 4 && xhr.status == 405) {
+          alert("Page Not Found")
+        }
+      }
+      xhr.open("POST", "./post.json", true);
+      //method方式,目標檔案,是否使用非同步方式(基本上是要不然會卡住)
+      xhr.setRequestHeader("Content-Type", "application/json"); //要求回傳格式
+      xhr.setRequestHeader("Accept", "application/json");
+
+      // //往後台送
+      // var data = {
+      //   name: "GMO",
+      //   text: "hello"
+      // }
+      // xhr.send(JSON.stringify(data));
+    }
+  </script>
+</body>
+
+</html>

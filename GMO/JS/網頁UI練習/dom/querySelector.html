@@ -1,0 +1,84 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>dom append</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+
+<body>
+  <button type="button" onclick="addRow()">新增</button>
+  <hr>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+  <table style="display: none;">
+    <tbody>
+      <tr id="tmp">
+        <td>空白ID</td>
+        <td>空白的名字</td>
+        <td>
+          <button class="delete_btn">
+            刪除
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+<script>
+
+  let countIndex = 0;
+  function addRow() {
+    let tmpTr = document.getElementById("tmp");
+    let tr = tmpTr.cloneNode(true); //如果沒這個 只會新增一次
+
+    let trIdName = "tr-" + countIndex; //不能連號
+    countIndex += 1;
+    tr.setAttribute("id", trIdName);
+    let deleteBtn = tr.querySelector(".delete_btn"); //要注意只會找到第一個 class 一樣的話
+    // console.log(deleteBtn);
+    // alert(deleteBtn);
+    deleteBtn.innerHTML = "刪除";
+    deleteBtn.setAttribute("data-id", trIdName);
+    deleteBtn.onclick = removeRow; //注意 沒有括弧
+
+
+    let tbody = document.getElementById("tbody");
+    tbody.appendChild(tr);
+
+  }
+  
+  function removeRow() {
+    let data_id = this.getAttribute("data-id");
+    let tr = document.getElementById(data_id);
+    // if (tr != null) {
+    //   tr.outerHTML = "";
+    // }
+
+    // 擇一
+
+    if (tr != null) {
+      let tbody = document.getElementById("tbody");
+      tbody.removeChild(tr);
+    }
+  }
+
+
+
+
+</script>
+
+</html>
