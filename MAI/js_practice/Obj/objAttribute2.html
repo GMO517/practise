@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var person = {
+            a: 1,
+            b: 2,
+            c: {}
+        };
+        //延伸的三個物件方法preventExtensions、seal、Freeze
+        //防止擴充、封裝、凍結
+
+        //preventExtensions
+        // Object.preventExtensions(person);//直接對物件做限制
+        // console.log('是否被擴充',Object.isExtensible(person));
+        // console.log('person a 的屬性特徵',Object.getOwnPropertyDescriptor(person,'a'));
+
+        // //調整屬性
+        // person.a='a';
+
+
+        // //新增屬性
+        // person.d='d';
+
+
+        // //巢狀屬性屬性 //淺層保護
+        // person.c.a='ca';
+        // //調整屬性
+
+        // Object.defineProperty(person,'a',{
+        //     configurable:false
+        // });
+
+        // //刪除
+        // delete person.b;
+
+        // //結果
+        // console.log('person 物件', person);
+        // console.log('person a 屬性特徵(嘗試修改)', Object.getOwnPropertyDescriptor(person,'a'));
+
+        //---------------------------------------------------------------
+        //seal 
+        //物件屬性無法新增刪除，以及無法重新配置特徵 
+        //         //但可以調整目前屬性值，且物件會被加上preventextensions
+        //         Object.seal(person);//直接對物件做限制
+        //         console.log('是否被封裝',Object.isSealed(person));
+        //         console.log('person a 的屬性特徵',Object.getOwnPropertyDescriptor(person,'a'));
+
+        //         //調整屬性
+        //         person.a='a';
+
+
+        //         //新增屬性
+        //         person.d='d';
+
+
+        //         //巢狀屬性屬性 //淺層保護
+        //         person.c.a='ca';
+        //         //調整屬性
+
+        //         Object.defineProperty(person,'a',{
+        //            writable:false
+        //         });
+
+        //         //刪除
+        //         delete person.b;
+
+        //         //結果
+        //         console.log('person 物件', person);
+        //         console.log('person a 屬性特徵(嘗試修改)', Object.getOwnPropertyDescriptor(person,'a'));
+        // //------------------------------------------------------------------
+
+            //freeze
+            //物件會加上seal，並且無法調整值
+
+        Object.freeze(person);//直接對物件做限制
+        console.log('是否被凍結', Object.isFrozen(person));
+        console.log('person a 的屬性特徵', Object.getOwnPropertyDescriptor(person, 'a'));
+
+        //調整屬性
+        person.a = 'a';
+
+
+        //新增屬性
+        person.d = 'd';
+
+
+        //巢狀屬性屬性 //淺層保護
+        person.c.a = 'ca';
+        //調整屬性
+
+        Object.defineProperty(person, 'a', {
+            configurable: false
+        });
+
+        //刪除
+        delete person.b;
+
+        //結果
+        console.log('person 物件', person);
+        console.log('person a 屬性特徵(嘗試修改)', Object.getOwnPropertyDescriptor(person, 'a'));
+
+    </script>
+</body>
+
+</html>

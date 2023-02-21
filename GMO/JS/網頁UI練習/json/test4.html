@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>改寫test3</h1>
+</body>
+<script>
+  var lib = new Object();
+  lib.setFirstName = function (firstName) {
+    this.firstName = firstName;
+    this.fullName = this.firstName + " " + this.lastName;
+  }
+
+  lib.setLastName = function (lastName) {
+    this.lastName = lastName;
+    this.fullName = this.firstName + " " + this.lastName;
+  }
+
+  lib.setFirstName("Progress");
+  console.log(lib.fullName);
+  lib.setLastName("Bar");
+  console.log(lib.fullName);
+
+</script>
+
+</html>

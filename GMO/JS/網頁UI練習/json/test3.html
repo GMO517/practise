@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>標題</h1>
+</body>
+<script>
+  let lib = new Object();
+  console.log(typeof lib);
+  // lib.name = "abc";
+  // console.log(lib.name);
+  lib.firstname = "Yan Shou";
+  lib.lastname = "Su";
+
+  lib.fullname = function () {
+    // alert(lib.firstname + " " + lib.lastname);
+    // alert(this.firstname + " " + this.lastname);
+    return this.firstname + " " + this.lastname;
+  };
+
+  // lib.fullname();
+  // console.log(lib.firstname);
+  // console.log(lib.lastname);
+  console.log(lib.fullname());
+
+</script>
+
+</html>

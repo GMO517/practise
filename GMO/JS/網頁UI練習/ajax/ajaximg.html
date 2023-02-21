@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ajax讀取圖片</title>
+</head>
+
+<body>
+  <div id="test">
+    AJAX測試
+  </div>
+  <button type="button" onclick="loadImage()">loadImage</button>
+  <div style="height: 1024px; width: 100%; background-color: red;"></div>
+  <img id="image" class="track" style="height: 350px;;width: 526px;background-color: black">
+  <script>
+    function loadImage() {
+      let xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          console.log(this.response);
+
+          let arr = new Uint8Array(this.response); //建立成一個array
+          console.log(arr);
+
+          let raw = String.fromCharCode.apply(null, arr);
+          console.log(raw);
+
+          let b64 = btoa(raw); //用b64處理raw
+          console.log(b64);
+
+          let dataURL = "data:image/jpeg;base64," + b64; //png要換成data:image/png;base64
+          console.log(dataURL);
+          document.getElementById("image").src = dataURL;
+
+        } else if (this.readyState == 4 && this.status == 404) {
+          console.log("Page not found");
+        }
+      }
+      xhr.open("GET", "./photo.jpeg", true);
+      xhr.responseType = "arraybuffer"; //重要!!!
+      xhr.setRequestHeader("Accept", "image/jpeg");
+      xhr.send();
+    }
+  </script>
+</body>
+
+</html>

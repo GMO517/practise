@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        async function get(){//改寫promise的冗長寫法
+            const res = await function(1) //加入await會變逐行執行
+            const res2 = await function(0)//要做串接時再宣告一次
+                                        
+        }
+
+
+            //async錯誤捕捉方式
+            (async ()=>{//IIFE，用trycatch()的方法
+                try {
+                    const res = await function();//promise的函式
+                    return res;
+                } catch (error) {
+                    console.log('error')
+                    throw error
+                    //catch要拋出時會用throw方式
+                }
+            })();
+            //async本質就是轉成promise方式
+
+    </script>
+</body>
+</html>

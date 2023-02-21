@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>網頁UI實習實例</title>
+
+  <link rel="stylesheet" href="../public/normalize.css">
+  <script src="https://kit.fontawesome.com/c027763855.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./public/style.css">
+  <link rel="stylesheet" href="./public/index.css">
+  <link rel="stylesheet" href="./public/grid.css">
+  <link rel="stylesheet" href="./public/nav.css">
+  <link rel="stylesheet" href="./public/hidden.css">
+  <link rel="stylesheet" href="./public/ratio.css">
+  <link rel="stylesheet" href="./public/card.css">
+  <link rel="stylesheet" href="./public/video.css">
+  <link rel="stylesheet" href="./public/footer.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+  <style>
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a href="#">Facebook</a></li>
+        <li class="nav-list-item"><a href="#">Google</a></li>
+        <li class="nav-list-item"><a href="#">正修科大</a></li>
+      </ul>
+      <button type="button" class="nav-btn">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <!-- navbar & 首頁圖 -->
+      <div class="row">
+        <div class="col-phone-100"></div>
+      </div>
+      <div class="row">
+        <div class="index-cover">
+          <div class="index-container">
+            <h1 class="_title">網頁UI實作</h1>
+            <div>
+              <button type="button" class="btn btn_light">登入</button>
+              <button type="button" class="btn btn_dark">註冊</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <!-- 卡片組 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-phone-100 col-tablet-50">
+            <div class="card mdl-shadow--2dp">
+              <div class="_image">
+                <div class="ratio_3_2">
+                  <img class="ratio_content" src="https://picsum.photos/300/200/?random=5">
+                </div>
+              </div>
+              <div class="_content">
+                <h4 class="_title">
+                  title title title title title title title
+                  title title title title title title title
+                </h4>
+                <p class="_detail">
+                  detail detail detail detail detail
+                  detail detail detail detail detail
+                </p>
+              </div>
+              <div class="_action">
+                <div class="_action_content">
+                  <a class="_link" href="#">
+                    <button class="btn" type="button">閱讀更多</button></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class=" col-phone-100 col-tablet-50">
+            <div class="card mdl-shadow--2dp">
+              <div class="_image">
+                <div class="ratio_3_2">
+                  <img class="ratio_content" src="https://picsum.photos/300/200/?random=6">
+                </div>
+              </div>
+              <div class="_content">
+                <h4 class="_title">
+                  title title title title title title title
+                  title title title title title title title
+                </h4>
+                <p class="_detail">
+                  detail detail detail detail detail
+                  detail detail detail detail detail
+                  detail detail detail detail detail
+                  detail detail detail detail detail
+                </p>
+              </div>
+              <div class="_action">
+                <div class="_action_content">
+                  <a class="_link" href="#">
+                    <button class="btn" type="button">閱讀更多</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <!-- 影片 -->
+      <div class="container">
+        <div class="row">
+          <div class="col-phone-100 col-tablet-67">
+            <div class="vidio-player">
+              <div class="ratio_16_9">
+                <iframe id="video_player" class="ratio_content" src="https://www.youtube.com/embed/5iBJgbVgCF8"
+                  title="YouTube video player" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+          <div class="col-phone-100 col-tablet-33">
+            <div class="video-list-container">
+              <div class="ratio_8_9">
+                <ul class="ratio_content video-list">
+                  <li class="_video" data-video="5iBJgbVgCF8">01.工程師學習地圖</li>
+                  <li class="_video" data-video="88qmvi4snuo">02.金魚都能懂得網頁入門</li>
+                  <li class="_video" data-video="phWxA89Dy94">03.Flex box in 8mins.</li>
+                  <li class="_video" data-video="DIq0g3bZ7Bk">04.Mac or Win</li>
+                  <li class="_video" data-video="tpTJr3N7qIc">05.Mongo DB 一次會</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="remove_padding">
+      <!-- image links -->
+      <div class="container">
+        <div class="row">
+
+          <div class="col-phone-100 col-tablet-50 col-desktop-25 hidden-on-tablet">
+            <a href="#">
+              <div class="ratio_3_2">
+                <img class="ratio_content" src="https://picsum.photos/300/200/?random=2">
+              </div>
+            </a>
+          </div>
+
+          <div class="col-phone-100 col-tablet-50 col-desktop-25 hidden-on-tablet">
+            <a href="#">
+              <div class="ratio_3_2">
+                <img class="ratio_content" src="https://picsum.photos/300/250/?random=1">
+              </div>
+            </a>
+          </div>
+          <div class="col-phone-100 col-tablet-50 col-desktop-25 hidden-on-phone">
+            <a href="#">
+              <div class="ratio_3_2">
+                <img class="ratio_content" src="https://picsum.photos/300/200/?random=3">
+              </div>
+            </a>
+          </div>
+          <div class="col-phone-100 col-tablet-50 col-desktop-25 hidden-on-phone">
+            <a href="#">
+              <div class="ratio_3_2">
+                <img class="ratio_content" src="https://picsum.photos/500/300/?random=4">
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-phone-100 col-tablet-33">
+          <div class="_container">
+            <ul class="footer-links">
+              <li>link1</li>
+              <li>link2</li>
+              <li>link2</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-phone-100 col-tablet-33">
+          <div class="_container">
+            <ul class="footer-links">
+              <li>link1</li>
+              <li>link2</li>
+              <li>link2</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-phone-100 col-phone-33">
+          <div class="_container _center">
+            <div class="row">
+              <div class="col-phone-100 col-phone-33">
+                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+              </div>
+              <div class="col-phone-100 col-phone-33">
+                <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+              </div>
+              <div class="col-phone-100 col-phone-33">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>改寫test4</h1>
+</body>
+<script>
+  var nameLib = new Object();
+  nameLib.setFirstName = function (firstName = "") {
+    if (typeof firstName != "string") {
+      this.firstName = "";
+    } else {
+      this.firstName = firstName;
+    }
+
+    if (this.lastName != null) {
+      this.fullName = this.firstName + " " + this.lastName;
+    } else {
+      this.fullName = this.firstName;
+    }
+  }
+  
+  nameLib.setLastName = function (lastName = "") {
+    if (typeof lastName != "string") {
+      this.lastName = "";
+    } else {
+      this.lastName = lastName;
+    }
+
+    if (this.lastName != null) {
+      this.fullName = this.firstName + " " + this.lastName;
+    } else {
+      this.fullName = this.lastName;
+    }
+  }
+
+
+
+
+
+  nameLib.setFirstName("Progress");
+  console.log(nameLib.fullName);
+  nameLib.setLastName("Bar");
+  console.log(nameLib.fullName);
+
+</script>
+
+</html>

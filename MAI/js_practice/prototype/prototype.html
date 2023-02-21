@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // var a = [1, 2, 3]
+        // a.forEach(i=>{
+        //     console.log(i)
+        // })
+        // var b=[4,5,6]
+        // a.__proto__.getLast = function(){
+        //     return this[this.length - 1]
+
+        // }
+        // console.log(a,b)
+        // console.log(a.getLast())
+
+        // var car={
+        //     name:"sut"
+        // }
+        // car.__proto__.getName=function(){//在原型裡面增加自己的方法
+        //     return this.name
+        // }
+        // // console.log(car,car.getName())
+        // // a.name="陣列屬性"
+        // // console.log(a.getName())
+
+        // function dog(name, color, size) {
+        //     animal.call(this, "犬科")
+        //     this.name = name
+        //     this.color = color
+        //     this.size = size
+        // }
+        // var bibi=new dog("阿比","白色","小型犬")//new產生新物件
+
+
+        // dog.prototype.bark=function(){
+        //     console.log(this.name+"吠叫")
+        // }
+
+
+        //__proto__ 建立在物件上
+        //prototype 建立在函式上 :維護上方便 
+
+        // var a = [] //obj>array>a 往上繼承原型
+        // //自行創造原型obj>animal>dog>mike------------
+        // var pupu=Object.create(bibi)//Pupu把bibi當作原型使用=可以使用bibi的屬性
+        // console.log(pupu.name)
+        // function animal(family){
+        //     this.kingdom="動物科"
+        //     this.family=family||"人科"
+        // }
+
+        // dog.prototype=Object.create(animal.prototype)
+        // dog.prototype.constructor=dog//原本建構函式會有的，會被蓋掉，只是將它補回去
+
+        // dog.prototype.bark=function(){
+        //     console.log(this.name+"吠叫")
+        // }
+        // dog.prototype.move=function(){
+        //     console.log(this.name+"移動")
+        // }
+
+        // var bibi=new dog("阿比","白色","小型犬")//new產生新物件
+        // console.log(bibi)//obj<animal<dog<bibi
+
+        // var newanimal = new animal("新物種")
+        // console.log(newanimal)
+
+
+        // function person(name, hair, eyes) {
+        //     this.name = "default"
+        //     this.hair = 'default'
+        //     this.eyes = 'default'
+        //     this.callName = function () {
+        //         console.log("名字:" + this.name + "\n" + "頭髮:" + this.hair + "\n" + "眼睛:" + this.eyes)
+
+        //     }
+        // };
+
+        // p.prototype.hi=function(){
+        //     console.log("hi")
+        // }
+        // x.first_name="tom"
+        // x.last_name="chrus"
+
+        // var pp = {
+        //     name: "default"
+        // }
+        // var tom = Object.create(pp)
+        // tom.name = "tom"
+        // console.log(tom)
+
+        function people(family){
+            this.kingdom="動物界"
+            this.family=family||"人科"
+
+        }
+
+        people.prototype.move=function(){
+            console.log(this.name+"移動")
+        }
+        
+    function person(name, hair, eyes) {
+        people.call(this,"人科")
+            this.name = name||"誰";
+            this.hair = hair||"黑色";
+            this.eyes = eyes||"黑色";
+        
+        }
+        person.prototype = Object.create(people.prototype)//peroson的原型被people蓋掉了
+        person.prototype.constructor = person//再把它蓋回去，用途是之後追查方便解讀
+        person.prototype.talk=function(){
+            console.log(this.name+"講話")
+        }
+        var tom = new person("TOM","藍色","褐色")
+        
+        function cat(name, hair, eyes) {
+        people.call(this,"貓科")
+            this.name = name||"誰";
+            this.hair = hair||"黑色";
+            this.eyes = eyes||"黑色";
+        
+        }
+        cat.prototype=Object.create(people.prototype)
+        cat.prototype.constructor=cat
+        var mew=new cat("凱蒂")
+     
+       console.log(mew)
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
